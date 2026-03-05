@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
-        
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		{# general meta #}
+		<meta charset="UTF-8">
+		<meta name="author" content="Mickael">
+		<meta
+		name="description" content="Vnez découvrir le restaurant Le Volcan, situé au pied des volcans du puy de dôme, il saura vous faire découvrir les spécialités Auvergnates">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{# css and js links #}
+		<link
+		rel="stylesheet" href="{{ asset('styles/app.css') }}">
+
+		{# fonts #}
+		<link rel="preload" href="{{ asset('fonts/Lobster_Two/LobsterTwo-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="{{ asset('fonts/Inter/static/Inter_18pt-Regular.woff2') }}" as="font" type="font/woff2" crossorigin> {% block stylesheets %}{% endblock %}
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+
+		<title>Le volcan -
+			{% block title %}Le volcan
+			{% endblock %}
+		</title>
+
+	</head>
+	<body class="bg-black h-svh flex flex-col"> {% block body %}{% endblock %}
+
+		<footer class="w-full flex flex-row items-center justify-between p-6 border-t-4 gold-border">
+			<div class="w-auto h-auto flex flex-row gap-2">
+
+				<div class="w-16 h-16 cursor-pointer">
+					<a target="_blank" href="https://facebook.com" class="outline-none  focus:brightness-150 focus:scale-110 hover:brightness-150 hover:scale-110  transition-transform duration-200 ease-out block">
+						<img class="w-full h-full   " target='_blank' src="{{ asset('icons/facebook-icon.svg')}}" alt="Aller sur Facebook">
+					</a>
+				</div>
+
+				<div class="w-16 h-16 cursor-pointer">
+					<a target="_blank" href="https://instagram.com" class="outline-none  focus:brightness-150 focus:scale-110 hover:brightness-150 hover:scale-110  transition-transform duration-200 ease-out block">
+						<img class="w-full h-full" target='_blank' src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Facebook">
+					</a>
+				</div>
+			</div>
+
+			<div>
+				<p class="font-[inter] text-white text-[20px] text-center">&copy; 2026 Le Volcan - Tous droit réservés.
+				</p>
+			</div>
+		</footer>
+	</body>
 </html>

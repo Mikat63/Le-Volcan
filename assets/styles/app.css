@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+:root {
+    --color-gold: #c1731a;
+}
+
+/* fonts */
+@font-face {
+    font-family: "lobsterTwo";
+    src: url("../fonts/Lobster_Two/LobsterTwo-Regular.woff2");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "inter";
+    src: url("../fonts/Inter/static/Inter_18pt-Regular.woff2");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* color */
+.gold-color-text {
+    color: var(--color-gold);
+}
+
+.gold-border {
+    border-color: var(--color-gold);
+}

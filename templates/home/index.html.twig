@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+
+	<header class="w-full h-[500px]">
+		<img class="w-full h-full " src="{{ asset('img/hero-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+	</header>
+
+
+	<main class="w-full flex flex-col flex-1 items-center justify-center gap-12">
+		<div class="w-[90%] h-auto flex flex-col items-center py-9 gap-14">
+			<h1 class=" text-8xl font-[lobsterTwo] gold-color-text">Notre identité !</h1>
+
+			<p class="font-[inter] text-white text-[36px] text-center">Au coeur des terres volcaniques, Le volcan vous invite à un voyage culinaire où tradition et terroir sont à l'honneur. Dans une ambiance chaleureuse et conviviale, découvrez des saveurs emblématiques de l'Auvergne, entre recettes ancestrales et produits du terroir soigneusement sélectionnés.</p>
+			<p class="font-[inter] text-white text-[36px] text-center">Notre passion ? Mettre à l'honneur le fromage fondant, les charcuteries locales, la truffade généreuse et bien d'autres trésors culinaires qui font la richesse de notre région. Que vous soyez amateur de bons plats ou curieux de nouvelles découvertes gastronomiques, notre équipe vous accueille avec enthousiasme pour une expérience authentique et savoureuse.
+			</p>
+			<p class="font-[inter] text-white text-[36px] text-center">Installez-vous, laissez-vous tenter et succombez aux délices du Volcan.
+			</p>
+
+			<a href="{{ path('app_menu')}}" class=" text-8xl font-[lobsterTwo] gold-color-text hover:brightness-150 hover:scale-110 focus:scale-110 focus:brightness-150 outline-none">Découvrez-notre carte</a>
+		</div>
+
+	</main>
+{% endblock %}
