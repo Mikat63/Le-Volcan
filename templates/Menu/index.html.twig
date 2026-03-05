@@ -4,9 +4,18 @@
 {% endblock %}
 
 {% block body %}
-	<main class="w-full flex flex-col flex-1 items-center gap-12">
-		<img class="w-full h-[400px]" src="{{ asset('img/hero-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+	<header class="w-full h-[500px]">
+		<img class="w-full h-full opacity-75" src="{{ asset('img/menu-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+	</header>
 
-	</div>
+	<main class="w-full flex flex-col flex-1 items-center justify-center gap-12">
+		<section class="w-[90%] h-auto flex flex-col items-center py-9 gap-14">
+			<h1 class=" text-6xl font-[lobsterTwo] gold-color-text">Notre carte !</h1>
 
-</main>{% endblock %}
+			{{{% include ('partials/menu-container.html.twig', {
+				plats: ["Salade auvergante (salade, bleu d'Auvergne, noix, jambon cru)","Croustillant de Saint-Nectaire (feuilleté au fromage fondu et miel)","Soupe aux lentilles du Puy avec crême fraîche et croûtons"]
+			}) %}}}
+		</section>
+
+	</main>
+{% endblock %}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='fr'>
 	<head>
 		{# general meta #}
 		<meta charset="UTF-8">
@@ -29,18 +29,19 @@
 	</head>
 	<body class="bg-black h-svh flex flex-col"> {% block body %}{% endblock %}
 
+		{# general footer for all project #}
 		<footer class="w-full flex flex-row items-center justify-between p-6 border-t-4 gold-border">
 			<div class="w-auto h-auto flex flex-row gap-2">
 
 				<div class="w-16 h-16 cursor-pointer">
-					<a target="_blank" href="https://facebook.com" class="outline-none  focus:brightness-150 focus:scale-110 hover:brightness-150 hover:scale-110  transition-transform duration-200 ease-out block">
+					<a target="_blank" href="https://facebook.com" class="outline-none hover:rotate-20 hover:scale-110 focus:rotate-20 focus:scale-110 transition-transform duration-200 ease-out block">
 						<img class="w-full h-full   " target='_blank' src="{{ asset('icons/facebook-icon.svg')}}" alt="Aller sur Facebook">
 					</a>
 				</div>
 
 				<div class="w-16 h-16 cursor-pointer">
-					<a target="_blank" href="https://instagram.com" class="outline-none  focus:brightness-150 focus:scale-110 hover:brightness-150 hover:scale-110  transition-transform duration-200 ease-out block">
-						<img class="w-full h-full" target='_blank' src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Facebook">
+					<a target="_blank" href="https://instagram.com" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
+						<img class="w-full h-full" target='_blank' src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Instagram">
 					</a>
 				</div>
 			</div>
