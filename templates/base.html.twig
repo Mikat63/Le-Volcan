@@ -22,13 +22,23 @@
 		{% endblock %}
 
 		<title>Le volcan -
-			{% block title %}Le volcan
-			{% endblock %}
+			{% block title %}{% endblock %}
 		</title>
 
 	</head>
-	<body class="bg-black h-svh flex flex-col"> {% block body %}{% endblock %}
+	<body class="bg-black h-svh flex flex-col">
+		<header class="w-full h-[500px] relative">
+			{% block backToHome %}
+				<a href="{{ path('app_home') }}" class="w-16 h-16 cursor-pointer absolute top-2 left-2 outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20 transition-transform duration-200 ease-out block z-10">
+					<img class="w-full h-full" src="{{ asset('icons/left-arrow-back.svg')}}" alt="Revenir à l'accueil">
+				</a>
+			{% endblock %}
+			{% block headerImg %}
+				<img class="w-full h-full" src="{{ asset('img/hero-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+			{% endblock %}
+		</header>
 
+		{% block body %}{% endblock %}
 		{# general footer for all project #}
 		<footer class="bg-amber-950 w-full flex flex-col p-6 border-t-4 gold-border gap-9 text-white font-[inter] text-[16px] ">
 			<div class="flex flex-row items-center justify-between">
@@ -98,4 +108,4 @@
 			</div>
 		</footer>
 	</body>
-</html>
+</html></body></html>
