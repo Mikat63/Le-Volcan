@@ -30,25 +30,71 @@
 	<body class="bg-black h-svh flex flex-col"> {% block body %}{% endblock %}
 
 		{# general footer for all project #}
-		<footer class="w-full flex flex-row items-center justify-between p-6 border-t-4 gold-border">
-			<div class="w-auto h-auto flex flex-row gap-2">
+		<footer class="bg-amber-950 w-full flex flex-col p-6 border-t-4 gold-border gap-9 text-white font-[inter] text-[16px] ">
+			<div class="flex flex-row items-center justify-between">
+				<div class="flex flex-col  gap-2">
+					<div>
+						<p class="font-bold">Adresse :</p>
+						<p>17 avenue Auguste Rouzand</p>
+						<p>63130 Royat</p>
+					</div>
 
-				<div class="w-16 h-16 cursor-pointer">
-					<a target="_blank" href="https://facebook.com" class="outline-none hover:rotate-20 hover:scale-110 focus:rotate-20 focus:scale-110 transition-transform duration-200 ease-out block">
-						<img class="w-full h-full   " target='_blank' src="{{ asset('icons/facebook-icon.svg')}}" alt="Aller sur Facebook">
-					</a>
+					<div>
+						<p>
+							<span class="font-bold">Téléphone :</span>
+							<a href="tel:0473516398">04 73 51 63 98</a>
+						</p>
+					</div>
 				</div>
 
-				<div class="w-16 h-16 cursor-pointer">
-					<a target="_blank" href="https://instagram.com" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
-						<img class="w-full h-full" target='_blank' src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Instagram">
-					</a>
+
+				<div class="flex flex-col text-white font-[inter] gap-1">
+
+					<p class="font-bold">Horaires d'ouvertures :</p>
+					<p>
+						<span class="font-bold">Du lundi au vendredi :</span>
+						11h30-14h00/18h00-22h00</p>
+					<p>
+						<span class="font-bold">Samedi :</span>
+						11h30-14h00/18h00-23h00</p>
+					<p>
+						<span class="font-bold">Dimanche :</span>
+						11h30-14h00</p>
+
+
 				</div>
+
 			</div>
 
-			<div>
-				<p class="font-[inter] text-white text-[20px] text-center">&copy; 2026 Le Volcan - Tous droit réservés.
-				</p>
+			<div class="w-full h-[300px] flex flex-col justify-center items-center">
+				<iframe class="w-{80%} h-full" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2783.2818790766055!2d3.0516221736128273!3d45.765540871080425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x47f71a48fa4a9567%3A0xe5b3347a7d0d33a7!2s17%20Av.%20Auguste%20Rouzaud%2C%2063130%20Royat!3m2!1d45.7655409!2d3.0541970999999997!5e0!3m2!1sfr!2sfr!4v1772790689553!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+			<div class="flex flex-row items-center justify-between">
+				<div class="w-auto h-auto flex flex-row gap-2">
+					<div class="w-12 h-12 cursor-pointer">
+						<a target="_blank" href="https://facebook.com" class="outline-none hover:rotate-20 hover:scale-110 focus:rotate-20 focus:scale-110 transition-transform duration-200 ease-out block">
+							<img class="w-full h-full   " target='_blank' src="{{ asset('icons/facebook-icon.svg')}}" alt="Aller sur Facebook">
+						</a>
+					</div>
+
+					<div class="w-12 h-12 cursor-pointer">
+						<a target="_blank" href="https://instagram.com" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
+							<img class="w-full h-full" target='_blank' src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Instagram">
+						</a>
+					</div>
+
+					<div class="w-12 h-12 cursor-pointer">
+						<a target="_blank" href="{{ path('app_contact')}}" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
+							<img class="w-full h-full" target='_blank' src="{{ asset('icons/mail-svgrepo-com.svg')}}" alt="Aller sur Instagram">
+						</a>
+					</div>
+				</div>
+
+				<div>
+					<p class="font-[inter] text-white text-[20px] text-center">&copy; 2026 Le Volcan - Tous droit réservés.
+					</p>
+				</div>
 			</div>
 		</footer>
 	</body>

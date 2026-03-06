@@ -1,16 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil
+{% block title %}Menu
 {% endblock %}
 
 {% block body %}
+
 	<header class="w-full h-[500px]">
-		<img class="w-full h-full opacity-75" src="{{ asset('img/menu-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+		<div tabindex="0">
+			<a href="{{ path('app_home') }}" class="w-16 h-16 cursor-pointer absolute top-2 left-2 outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20 transition-transform duration-200 ease-out block z-10">
+				<img class="w-full h-full" src="{{ asset('icons/left-arrow-back.svg')}}" alt="Revenir à l'accueil">
+			</a>
+		</div>
+		<img class="w-full h-full " src="{{ asset('img/menu-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
 	</header>
 
 	<main class="w-full h-auto flex flex-col flex-1 items-center   gap-12 py-9">
-		<section class="w-[90%] h-full flex flex-col items-center justify-center gap-28
-										">
+		<section class="w-[90%] h-full flex flex-col items-center justify-center gap-28">
 			<h1 class=" text-6xl font-[lobsterTwo] gold-color-text">Notre carte !</h1>
 
 			{% include 'partials/menu-container.html.twig' with {
