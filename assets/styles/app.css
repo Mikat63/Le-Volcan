@@ -29,3 +29,7 @@
 .gold-border {
     border-color: var(--color-gold);
 }
+
+.gold-bg {
+    background-color: var(--color-gold);
+}
