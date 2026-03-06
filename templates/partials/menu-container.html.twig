@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-6">
+	<h2 class="gold-color-text font-[lobsterTwo] text-[32px] text-center">
+		{{title}}
+	</h2>
+
+	{# categorie container #}
+	<div class="flex flex-row gap-6 text-[inter] text-white text-[24px]">
+		<div class=" flex flex-col gap-1">
+			<ul>
+				{% for plat in plats %}
+					<li>{{plat}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="w-0.5 h-full bg-(--color-gold)"></div>
+
+		<div class=" flex flex-col gap-1">
+			<ul>
+				{% for price in prix %}
+					<li>{{price}}&euro;</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

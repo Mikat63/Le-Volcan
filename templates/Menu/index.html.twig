@@ -8,13 +8,28 @@
 		<img class="w-full h-full opacity-75" src="{{ asset('img/menu-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
 	</header>
 
-	<main class="w-full flex flex-col flex-1 items-center justify-center gap-12">
-		<section class="w-[90%] h-auto flex flex-col items-center py-9 gap-14">
+	<main class="w-full h-auto flex flex-col flex-1 items-center   gap-12 py-9">
+		<section class="w-[90%] h-full flex flex-col items-center justify-center gap-28
+										">
 			<h1 class=" text-6xl font-[lobsterTwo] gold-color-text">Notre carte !</h1>
 
-			{{{% include ('partials/menu-container.html.twig', {
-				plats: ["Salade auvergante (salade, bleu d'Auvergne, noix, jambon cru)","Croustillant de Saint-Nectaire (feuilleté au fromage fondu et miel)","Soupe aux lentilles du Puy avec crême fraîche et croûtons"]
-			}) %}}}
+			{% include 'partials/menu-container.html.twig' with {
+				title: 'Entrées',
+				plats: ["Salade auvergante (salade, bleu d'Auvergne, noix, jambon cru)","Croustillant de Saint-Nectaire (feuilleté au fromage fondu et miel)","Soupe aux lentilles du Puy avec crême fraîche et croûtons"],
+				prix: [8,7,6]
+			} %}
+
+			{% include 'partials/menu-container.html.twig' with {
+				title: 'Plats',
+				plats: ["Truffade traditionnelle pommes de terre, tome fraîche, ail persil","Aligot & saucisse artisanale purée onctueuse au fromage","Tartiflette au Saint-Nectaire","Entrec$ote grillée accompagnée de gratin dauphinois et légumes"],
+				prix: [15,14,18,22]
+			} %}
+
+			{% include 'partials/menu-container.html.twig' with {
+				title: 'Desserts',
+				plats: ["Fondant chocolat & câtaignes avec crême anglaise maison","Tarte aux myrtilles des montagnes servie tiède avec chantilly","Crême brûlée au sucre de betterave croquant et fondant à la fois"],
+				prix: [7,6,6]
+			} %}
 		</section>
 
 	</main>
