@@ -7,6 +7,42 @@
 		<meta
 		name="description" content="Vnez découvrir le restaurant Le Volcan, situé au pied des volcans du puy de dôme, il saura vous faire découvrir les spécialités Auvergnates">
 
+		{# Open Graph SEO #}
+		<meta property="og:title" content="Le Volcan - Restaurant Auvergnat à Royat"/>
+		<meta property="og:description" content="Découvrez les spécialités Auvergnates dans une ambiance chaleureuse au restaurant Le Volcan à Royat."/>
+		<meta property="og:type" content="restaurant"/>
+		<meta property="og:url" content="https://le-volcan.fr/"/>
+		<meta
+		property="og:image" content="{{ asset('img/hero-baneer.webp') }}"/>
+
+		{# JSON-LD SEO #}
+		<script type="application/ld+json">
+			{
+																																									  "@context": "https://schema.org",
+																																									  "@type": "Restaurant",
+																																									  "name": "Le Volcan",
+																																									  "image": "{{ asset('img/hero-baneer.webp') }}",
+																																									  "address": {
+																																									    "@type": "PostalAddress",
+																																									    "streetAddress": "17 avenue Auguste Rouzand",
+																																									    "addressLocality": "Royat",
+																																									    "postalCode": "63130",
+																																									    "addressCountry": "FR"
+																																									  },
+																																									  "telephone": "+33473516398",
+																																									  "url": "https://le-volcan.fr/",
+																																									  "servesCuisine": "Auvergnate, Française",
+																																									  "priceRange": "€€",
+																																									  "openingHours": [
+																																									    "Mo-Fr 11:30-14:00",
+																																									    "Mo-Fr 18:00-22:00",
+																																									    "Sa 11:30-14:00",
+																																									    "Sa 18:00-23:00",
+																																									    "Su 11:30-14:00"
+																																									  ]
+																																									}
+		</script>
+
 		{# css and js links #}
 		<link
 		rel="stylesheet" href="{{ asset('styles/app.css') }}">
@@ -26,15 +62,26 @@
 		</title>
 
 	</head>
-	<body class="bg-black h-svh flex flex-col">
+	<body
+		class="bg-black min-h-svh flex flex-col">
+
+		{# gzeneral headers just icon can hidden and img changed #}
 		<header class="w-full h-[500px] relative">
 			{% block backToHome %}
 				<a href="{{ path('app_home') }}" class="w-16 h-16 cursor-pointer absolute top-2 left-2 outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20 transition-transform duration-200 ease-out block z-10">
-					<img class="w-full h-full" src="{{ asset('icons/left-arrow-back.svg')}}" alt="Revenir à l'accueil">
+					<img class="w-full h-full object-center object-cover" src="{{ asset('icons/left-arrow-back.svg')}}" alt="Revenir à l'accueil">
 				</a>
 			{% endblock %}
 			{% block headerImg %}
-				<img class="w-full h-full" src="{{ asset('img/hero-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+				<picture>
+					<!-- Version mobile -->
+					<source
+					srcset="{{ asset('img/hero-baneer-small.webp') }}" media="(max-width: 600px)" type="image/webp">
+
+					<!-- Version desktop -->
+					<source srcset="{{ asset('img/hero-baneer.webp') }}" media="(min-width: 601px)" type="image/webp">
+					<img src="{{ asset('img/hero-baneer.webp') }}" alt="Bannière Le Volcan" class="absolute  w-full h-full object-cover object-center">
+				</picture>
 			{% endblock %}
 		</header>
 
@@ -77,26 +124,26 @@
 			</div>
 
 			<div class="w-full h-[300px] flex flex-col justify-center items-center">
-				<iframe class="w-{80%} h-full" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2783.2818790766055!2d3.0516221736128273!3d45.765540871080425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x47f71a48fa4a9567%3A0xe5b3347a7d0d33a7!2s17%20Av.%20Auguste%20Rouzaud%2C%2063130%20Royat!3m2!1d45.7655409!2d3.0541970999999997!5e0!3m2!1sfr!2sfr!4v1772790689553!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe aria-label="Carte gpd o* trouver le réstaurant Le Volcan" class="w-{80%} h-full" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2783.2818790766055!2d3.0516221736128273!3d45.765540871080425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x47f71a48fa4a9567%3A0xe5b3347a7d0d33a7!2s17%20Av.%20Auguste%20Rouzaud%2C%2063130%20Royat!3m2!1d45.7655409!2d3.0541970999999997!5e0!3m2!1sfr!2sfr!4v1772790689553!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 
 			<div class="flex flex-row items-center justify-between">
 				<div class="w-auto h-auto flex flex-row gap-2">
 					<div class="w-12 h-12 cursor-pointer">
 						<a target="_blank" href="https://facebook.com" class="outline-none hover:rotate-20 hover:scale-110 focus:rotate-20 focus:scale-110 transition-transform duration-200 ease-out block">
-							<img class="w-full h-full   " target='_blank' src="{{ asset('icons/facebook-icon.svg')}}" alt="Aller sur Facebook">
+							<img class="w-full h-full" src="{{ asset('icons/facebook-icon.svg')}}" alt="Aller sur Facebook">
 						</a>
 					</div>
 
 					<div class="w-12 h-12 cursor-pointer">
 						<a target="_blank" href="https://instagram.com" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
-							<img class="w-full h-full" target='_blank' src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Instagram">
+							<img class="w-full h-full" src="{{ asset('icons/instagram-icon.svg')}}" alt="Aller sur Instagram">
 						</a>
 					</div>
 
 					<div class="w-12 h-12 cursor-pointer">
-						<a target="_blank" href="{{ path('app_contact')}}" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
-							<img class="w-full h-full" target='_blank' src="{{ asset('icons/mail-svgrepo-com.svg')}}" alt="Aller sur Instagram">
+						<a href="{{ path('app_contact')}}" class="outline-none hover:rotate-20 hover:scale-110 focus:scale-110 focus:rotate-20  transition-transform duration-200 ease-out block">
+							<img class="w-full h-full" src="{{ asset('icons/mail-svgrepo-com.svg')}}" alt="Contactez-nous">
 						</a>
 					</div>
 				</div>

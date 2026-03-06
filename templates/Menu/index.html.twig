@@ -4,34 +4,101 @@
 {% endblock %}
 
 {% block headerImg %}
-	<img class="w-full h-full" src="{{ asset('img/menu-baneer.webp')}}" alt="Bannière du réstaurant le volcan">
+	<picture>
+		<source srcset="{{ asset('img/menu-baneer-small.webp') }}" media="(max-width: 600px)" type="image/webp">
+		<source srcset="{{ asset('img/menu-baneer.webp') }}" media="(min-width: 601px)" type="image/webp">
+		<img src="{{ asset('img/menu-baneer.webp') }}" alt="Bannière Le Volcan" class="absolute w-full h-full object-cover object-center">
+	</picture>
 {% endblock %}
 
 {% block body %}
+	<main class="w-full h-auto flex flex-col flex-1 items-center gap-12 py-9">
+		<section class="w-[80%] h-full flex flex-col items-center justify-center gap-28 py-12 lg:w-[70%] 2xl:w-[45%] ">
 
+			<h1 class="text-6xl font-[lobsterTwo] gold-color-text">Notre carte !</h1>
 
-	<main class="w-full h-auto flex flex-col flex-1 items-center   gap-12 py-9">
-		<section class="w-[90%] h-full flex flex-col items-center justify-center gap-28">
-			<h1 class=" text-6xl font-[lobsterTwo] gold-color-text">Notre carte !</h1>
-
+			{# Entrées #}
 			{% include 'partials/menu-container.html.twig' with {
-				title: 'Entrées',
-				plats: ["Salade auvergante (salade, bleu d'Auvergne, noix, jambon cru)","Croustillant de Saint-Nectaire (feuilleté au fromage fondu et miel)","Soupe aux lentilles du Puy avec crême fraîche et croûtons"],
-				prix: [8,7,6]
-			} %}
+            title: 'Entrées',
+            plats: [
+                "Salade auvergante (salade, bleu d'Auvergne, noix, jambon cru)",
+                "Croustillant de Saint-Nectaire (feuilleté au fromage fondu et miel)",
+                "Soupe aux lentilles du Puy avec crême fraîche et croûtons"
+            ],
+            prix: [8,7,6]
+        } %}
 
+			{# Plats #}
 			{% include 'partials/menu-container.html.twig' with {
-				title: 'Plats',
-				plats: ["Truffade traditionnelle pommes de terre, tome fraîche, ail persil","Aligot & saucisse artisanale purée onctueuse au fromage","Tartiflette au Saint-Nectaire","Entrec$ote grillée accompagnée de gratin dauphinois et légumes"],
-				prix: [15,14,18,22]
-			} %}
+            title: 'Plats',
+            plats: [
+                "Truffade traditionnelle pommes de terre, tome fraîche, ail persil",
+                "Aligot & saucisse artisanale purée onctueuse au fromage",
+                "Tartiflette au Saint-Nectaire",
+                "Entrecôte grillée accompagnée de gratin dauphinois et légumes"
+            ],
+            prix: [15,14,18,22]
+        } %}
 
+			{# Desserts #}
 			{% include 'partials/menu-container.html.twig' with {
-				title: 'Desserts',
-				plats: ["Fondant chocolat & câtaignes avec crême anglaise maison","Tarte aux myrtilles des montagnes servie tiède avec chantilly","Crême brûlée au sucre de betterave croquant et fondant à la fois"],
-				prix: [7,6,6]
-			} %}
+            title: 'Desserts',
+            plats: [
+                "Fondant chocolat & châtaignes avec crême anglaise maison",
+                "Tarte aux myrtilles des montagnes servie tiède avec chantilly",
+                "Crême brûlée au sucre de betterave croquant et fondant à la fois"
+            ],
+            prix: [7,6,6]
+        } %}
+
+			{# Apéritifs #}
+			{% include 'partials/menu-container.html.twig' with {
+            title: 'Apéritifs',
+            plats: [
+                "Kir (cassis, mûre, pêche)",
+                "Suze",
+                "Ricard",
+                "Martini blanc / rouge",
+                "Porto"
+            ],
+            prix: [4.5, 4, 3.5, 4, 4]
+        } %}
+
+			{# Boissons avec alcool #}
+			{% include 'partials/menu-container.html.twig' with {
+            title: 'Boissons avec alcool',
+            plats: [
+                "Bière blonde artisanale d’Auvergne 33cl",
+                "Bière ambrée locale 33cl",
+                "Bière blanche 33cl",
+                "Saint-Pourçain AOP (verre)",
+                "Saint-Pourçain AOP (bouteille)",
+                "Côtes d’Auvergne Gamay (verre)",
+                "Côtes d’Auvergne Gamay (bouteille)",
+                "Côtes d’Auvergne Chardonnay (verre)",
+                "Côtes d’Auvergne Chardonnay (bouteille)",
+                "Gentiane d’Auvergne",
+                "Verveine du Velay",
+                "Rhum arrangé maison"
+            ],
+            prix: [5.5, 6, 5.5, 4.5, 18, 5, 20, 5, 20, 5, 5, 6]
+        } %}
+
+			{# Boissons chaudes #}
+			{% include 'partials/menu-container.html.twig' with {
+            title: 'Boissons chaudes',
+            plats: [
+                "Café",
+                "Café allongé",
+                "Cappuccino",
+                "Latte macchiato",
+                "Chocolat chaud maison",
+                "Thé (menthe, fruits rouges, earl grey, verveine)",
+                "Infusion verveine d’Auvergne"
+            ],
+            prix: [2, 2.2, 3.5, 4, 4, 3.5, 3.5]
+        } %}
+
 		</section>
-
 	</main>
 {% endblock %}

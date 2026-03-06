@@ -1,10 +1,10 @@
-<div class="flex flex-col gap-6">
+<div class="w-full h-auto flex flex-col gap-6 ">
 	<h2 class="gold-color-text font-[lobsterTwo] text-[32px] text-center">
 		{{title}}
 	</h2>
 
 	{# categorie container #}
-	<div class="flex flex-row gap-6 text-[inter] text-white text-[24px]">
+	<div class="w-full h-full flex flex-row gap-6 text-[inter] text-white text-[24px] justify-between items-start">
 		<div class=" flex flex-col gap-1">
 			<ul>
 				{% for plat in plats %}
@@ -13,9 +13,8 @@
 			</ul>
 		</div>
 
-		<div class="w-0.5 h-full bg-(--color-gold)"></div>
 
-		<div class=" flex flex-col gap-1">
+		<div class=" flex flex-col gap-1 border-l-4 gold-border pl-6">
 			<ul>
 				{% for price in prix %}
 					<li>{{price}}&euro;</li>
