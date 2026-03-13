@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "daisyui";
+ 
 
 :root {
     --color-gold: #c1731a;
